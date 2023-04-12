@@ -17,5 +17,8 @@ for index, row in df.iterrows():
     # h - height , "12" is the size of the border which is recommended to be the size of the font
     pdf.line(10, 22, 200, 22)   # line(x1,y1,x2,y2) x represent the distance in mm from the left side of the page and right side , and y represent the height from the top
 
+    for i in range(row['Pages']-1):
+        pdf.add_page()
+
 
 pdf.output('output.pdf')   # generates a pdf file into the folder
